@@ -2,12 +2,19 @@ import subprocess
 import os
 import filecmp
 
+def compare_strings(string1, string2):
+	# print(f"\n\n//{string1}\\\\\n\n", string1)
+	print(f"\n\n=//{string2}\\\\\n\n", string2)
+	if string1 == string2:
+		return True
+	else:
+		return False
+
 i = 0
 executable = "./minishell"
 path_output = "./minishell_tester/output"
 path_cases = "./minishell_tester/cases/case0.txt"
 path_solution = "./minishell_tester/solution/case0.txt"
-
 
 while (i < 4):
 	with open(f"./minishell_tester/cases/case{i}.txt", 'r') as c:
@@ -17,8 +24,8 @@ while (i < 4):
 	output, error = process.communicate(input_data)
 	decode_out = output.decode()
 	# print(decode_out)
-	with open(f"./minishell_tester/output/case{i}.txt", "w") as file:
-		print(decode_out, file=file)
+	# with open(f"./minishell_tester/output/case{i}.txt", "w") as file:
+		# print(decode_out, file=file)
 	# filename = f"./minishell_tester/output/case{i}.txt"
 	# with open(filename) as file:
 	# 	lines = file.readlines()
@@ -35,12 +42,7 @@ while(i < file_count):
 	path_output_files = f"./minishell_tester/output/case{i}.txt"
 	print(f"case{i + 1}")
 	with open(path_output_files, "r") as f1, open(path_solution, "r") as f2:
-		print(f1.read())
-		print("------------")
-		print(f2.read())
-		print("------------")
-		result = filecmp.cmp(f1.name, f2.name)
-		if result:
+		if filecmp.cmp(path_solution, path_output_files):
 			print("✔️")
 		else:
 			print("❌")
