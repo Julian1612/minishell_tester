@@ -1,2 +1,2 @@
 👉 echo -n bonjour
-bonjour👉 
+bonjour👉
