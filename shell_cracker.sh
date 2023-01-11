@@ -1,8 +1,19 @@
-# !/bin/bash
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    shell_cracker.sh                                   :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/01/11 15:58:02 by jschneid          #+#    #+#              #
+#    Updated: 2023/01/11 16:19:45 by jschneid         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 x=0
 rm -rf ./output
 mkdir ./output
-while [ $x -le 2 ]
+while [ $x -le 3 ]
 do
   printf "Test $x: "
   file_contents=$(cat cases/case$x.txt)
@@ -15,4 +26,3 @@ do
   fi
   x=$(( $x + 1 ))
 done
-
