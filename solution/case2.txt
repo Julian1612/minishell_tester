@@ -1,3 +1,1 @@
-👉 echo "aaaa"bbbb
-aaaabbbb
-👉
+c
