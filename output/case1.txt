@@ -1,1 +1,3 @@
-b
+👉 echo < shell_cracker.sh hi > out | wc -l
+       0
+👉 

@@ -1,1 +1,3 @@
-a
+👉 echo hello world
+hello world
+👉 

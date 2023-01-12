@@ -19,7 +19,6 @@ def create_output_file():
 		process = subprocess.Popen([executable], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 		output, error = process.communicate(input_data)
 		decode_out = output.decode()
-		print(decode_out)
 		with open(f"./minishell_tester/output/case{i}.txt", "w") as file:
 			print(decode_out, file=file)
 		# filename = f"./minishell_tester/output/case{i}.txt"
@@ -38,7 +37,7 @@ def check_output():
 	while(i < file_count):
 		path_solution = f"./minishell_tester/solution/case{i}.txt"
 		path_output_files = f"./minishell_tester/output/case{i}.txt"
-		print(f"case{i + 1}")
+		print(f"Case {i + 1}:")
 		with open(path_output_files, "r") as f1, open(path_solution, "r") as f2:
 			if compare_strings(f1.read(), f2.read()):
 				print("\033[0;32m✔️\033[0m\n")
@@ -46,5 +45,23 @@ def check_output():
 				print("❌")
 		i += 1
 
-# create_output_file()
-check_output()
+def manue():
+	while (True):
+		print("1. Test minishell")
+		print("2. Test inbuild functions")
+		print("3. Test redirections")
+		print("4. Exit")
+		choice = input("Enter your choice: ")
+		if choice == "1":
+			create_output_file()
+			check_output()
+		elif choice == "2":
+			print("Option is not availible yet :(")
+		elif choice == "3":
+			print("Option is not availible yet :(")
+		elif choice == "4":
+			return
+		else:
+			print("Invalid choice")
+
+manue()
