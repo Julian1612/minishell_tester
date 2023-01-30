@@ -2,66 +2,52 @@ import subprocess
 import os
 import filecmp
 import difflib
+import shutil
 
-def compare_strings(string1, string2):
-	if string1 == string2:
-		return True
+def create_output_file(file_nbr):
+	executable = "../cub3D"
+	input_file = f"./cases/case{file_nbr}.cub"
+	args = [executable, input_file]
+	process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	output, error = process.communicate()
+	decode_out = output.decode()
+	os.makedirs("./output", exist_ok=True)
+	with open(f"./output/out{file_nbr}.txt", "w") as file:
+		print(decode_out, file=file)
+	process.wait()
+	process.kill()
+
+def count_files(dir_path):
+	return len([f for f in os.listdir(dir_path) if os.path.isfile(os.path.join(dir_path, f))])
+
+def create_output():
+	nbr_files = count_files("./cases")
+	i = 0
+	while i < nbr_files:
+		create_output_file(i)
+		i += 1
+
+def compare_files(file1, file2):
+		with open(file1) as f1, open(file2) as f2:
+			return f1.read() == f2.read()
+
+
+nbr_files = count_files("./cases")
+create_output()
+for i in range(nbr_files):
+	file1 = f"./output/out{i}.txt"
+	file2 = f"./solution/solution{i}.txt"
+	test = 0
+	if compare_files(file1, file2):
+		test = 1
+		print(f"\033[32m---------------Testing map{i}:---------------")
 	else:
-		return False
-
-def create_output_file():
-	executable = "./minishell"
-	i = 0
-	while (i < 4):
-		with open(f"./minishell_tester/cases/case{i}.txt", 'r') as c:
-			content = c.read()
-		input_data = content.encode()
-		process = subprocess.Popen([executable], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-		output, error = process.communicate(input_data)
-		decode_out = output.decode()
-		with open(f"./minishell_tester/output/case{i}.txt", "w") as file:
-			print(decode_out, file=file)
-		# filename = f"./minishell_tester/output/case{i}.txt"
-		# with open(filename) as file:
-		# 	lines = file.readlines()
-		# with open(filename, 'w') as file:
-		# 	file.writelines(lines[1:-1])
-		process.wait()
-		process.kill()
-		i += 1
-
-def check_output():
-	i = 0
-	path_output = "./minishell_tester/output"
-	file_count = len(os.listdir(path_output))
-	while(i < file_count):
-		path_solution = f"./minishell_tester/solution/case{i}.txt"
-		path_output_files = f"./minishell_tester/output/case{i}.txt"
-		print(f"Case {i + 1}:")
-		with open(path_output_files, "r") as f1, open(path_solution, "r") as f2:
-			if compare_strings(f1.read(), f2.read()):
-				print("\033[0;32m✔️\033[0m\n")
-			else:
-				print("❌")
-		i += 1
-
-def manue():
-	while (True):
-		print("1. Test minishell")
-		print("2. Test inbuild functions")
-		print("3. Test redirections")
-		print("4. Exit")
-		choice = input("Enter your choice: ")
-		if choice == "1":
-			create_output_file()
-			check_output()
-		elif choice == "2":
-			print("Option is not availible yet :(")
-		elif choice == "3":
-			print("Option is not availible yet :(")
-		elif choice == "4":
-			return
-		else:
-			print("Invalid choice")
-
-manue()
+		print(f"\033[31m---------------Testing map{i}:---------------")
+	with open(file1) as f1, open(file2) as f2:
+		print(f1.read())
+		print(f2.read())
+	if test:
+		print(f"Testing map{i}:✅\033[0m")
+	else:
+		print(f"Testing map{i}:❌\033[0m")
+shutil.rmtree("./output")
