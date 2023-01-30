@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    main.py                                            :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/01/30 20:11:17 by jschneid          #+#    #+#              #
+#    Updated: 2023/01/30 20:15:05 by jschneid         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 import subprocess
 import os
 import filecmp
@@ -28,25 +40,28 @@ def create_output():
 		i += 1
 
 def compare_files(file1, file2):
-		with open(file1) as f1, open(file2) as f2:
-			return f1.read() == f2.read()
+		compare = False
 
+		with open(file1) as f1, open(file2) as f2:
+			if f1.read() == f2.read():
+				compare = True
+		if compare:
+			print(f"\033[32m---------------Testing map{i}:---------------")
+			return True
+		else:
+			print(f"\033[31m---------------Testing map{i}:---------------")
+			return False
 
 nbr_files = count_files("./cases")
 create_output()
 for i in range(nbr_files):
 	file1 = f"./output/out{i}.txt"
 	file2 = f"./solution/solution{i}.txt"
-	test = 0
-	if compare_files(file1, file2):
-		test = 1
-		print(f"\033[32m---------------Testing map{i}:---------------")
-	else:
-		print(f"\033[31m---------------Testing map{i}:---------------")
+	coparison = compare_files(file1, file2)
 	with open(file1) as f1, open(file2) as f2:
 		print(f1.read())
 		print(f2.read())
-	if test:
+	if coparison:
 		print(f"Testing map{i}:✅\033[0m")
 	else:
 		print(f"Testing map{i}:❌\033[0m")
