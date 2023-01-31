@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 20:11:17 by jschneid          #+#    #+#              #
-#    Updated: 2023/01/30 20:15:05 by jschneid         ###   ########.fr        #
+#    Updated: 2023/01/31 14:51:58 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,12 @@ import shutil
 def create_output_file(file_nbr):
 	executable = "../cub3D"
 	input_file = f"./cases/case{file_nbr}.cub"
-	args = [executable, input_file]
+	if file_nbr == 31:
+		args = [executable, input_file, input_file]
+	elif file_nbr == 32:
+		args = [executable]
+	else:
+		args = [executable, input_file]
 	process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	output, error = process.communicate()
 	decode_out = output.decode()
@@ -58,9 +63,9 @@ for i in range(nbr_files):
 	file1 = f"./output/out{i}.txt"
 	file2 = f"./solution/solution{i}.txt"
 	coparison = compare_files(file1, file2)
-	with open(file1) as f1, open(file2) as f2:
-		print(f1.read())
-		print(f2.read())
+	# with open(file1) as f1, open(file2) as f2:
+	# 	print(f1.read())
+	# 	print(f2.read())
 	if coparison:
 		print(f"Testing map{i}:✅\033[0m")
 	else:
