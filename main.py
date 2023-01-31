@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 20:11:17 by jschneid          #+#    #+#              #
-#    Updated: 2023/01/31 14:51:58 by jschneid         ###   ########.fr        #
+#    Updated: 2023/01/31 17:54:55 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,10 @@ import os
 import filecmp
 import difflib
 import shutil
+
+# check for the correct data type of the file
+# check for player in map the map
+# check for invalid characters in map
 
 def create_output_file(file_nbr):
 	executable = "../cub3D"
