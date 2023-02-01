@@ -6,11 +6,12 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 15:58:02 by jschneid          #+#    #+#              #
-#    Updated: 2023/01/31 16:36:55 by jschneid         ###   ########.fr        #
+#    Updated: 2023/01/31 19:52:23 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/bash
+
 script_path="main.py"
 
 gsed -i '/\/\/#define RUN_TEST/s/\/\/#define.*/#define RUN_TEST/' ../includes/cub3D.h

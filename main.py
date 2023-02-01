@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 20:11:17 by jschneid          #+#    #+#              #
-#    Updated: 2023/01/31 17:54:55 by jschneid         ###   ########.fr        #
+#    Updated: 2023/02/01 15:39:10 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,8 @@ def create_output_file(file_nbr):
 		args = [executable, input_file, input_file]
 	elif file_nbr == 32:
 		args = [executable]
+	elif file_nbr == 33:
+		args = [executable, "./cases/case33"]
 	else:
 		args = [executable, input_file]
 	process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -74,4 +76,4 @@ for i in range(nbr_files):
 		print(f"Testing map{i}:✅\033[0m")
 	else:
 		print(f"Testing map{i}:❌\033[0m")
-shutil.rmtree("./output")
+# shutil.rmtree("./output")
