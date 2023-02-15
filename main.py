@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 20:11:17 by jschneid          #+#    #+#              #
-#    Updated: 2023/02/15 17:42:01 by jschneid         ###   ########.fr        #
+#    Updated: 2023/02/15 18:30:23 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,10 @@ def compare_files(file1, file2):
 			print(f"\033[31m---------------Testing map{i}:---------------")
 			return False
 
+def memory_leak_test():
+	valgrind_output = subprocess.run(["valgrind", "--leak-check=full", "./cub3D ./cases/case0.cub"], capture_output=True)
+	print(valgrind_output.stdout.decode("utf-8"))
+
 nbr_files = count_files("./cases")
 create_output()
 for i in range(nbr_files):
@@ -76,4 +80,9 @@ for i in range(nbr_files):
 		print(f"Testing map{i}:✅\033[0m")
 	else:
 		print(f"Testing map{i}:❌\033[0m")
+print("Test for memory leaks:")
+if(memory_leak_test()):
+	print("Memory leaks test:✅\033[0m")
+else:
+	print("Memory leaks test:❌\033[0m")
 # shutil.rmtree("./output")

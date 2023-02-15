@@ -1,1 +1,26 @@
+Process:         cub3D [62169]
+Path:            /Users/USER/*/cub3D
+Load Address:    0x100ca8000
+Identifier:      cub3D
+Version:         0
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  Python [62119]
+
+Date/Time:       2023-02-15 18:30:59.092 +0100
+Launch Time:     2023-02-15 18:30:58.715 +0100
+OS Version:      macOS 13.2 (22D49)
+Report Version:  7
+Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
+Analysis Tool Version:  Xcode 14.2 (14C18)
+
+Physical footprint:         1601K
+Physical footprint (peak):  1601K
+Idle exit: untracked
+----
+
+leaks Report Version: 4.0
+Process 62169: 1162 nodes malloced for 88 KB
+Process 62169: 0 leaks for 0 total leaked bytes.
+
 
