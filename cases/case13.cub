@@ -1,9 +1,9 @@
 C 36,42,107
 F 33,35,38
 
-EA ./img/east.xpm
-SO ./img/south.xpm
-WE ./img/west.xpm
+EA ./textures/east.xpm
+SO ./textures/south.xpm
+WE ./textures/west.xpm
 
         11111111111111111111111
         11000000000010011100001                              1111111111111111

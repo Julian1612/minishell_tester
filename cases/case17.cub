@@ -1,7 +1,7 @@
-NO ./img/north.xpm
-EA ./img/east.xpm
-SO ./img/south.xpm
-WE ./img/west.xpm
+NO ./textures/north.xpm
+EA ./textures/east.xpm
+SO ./textures/south.xpm
+WE ./textures/west.xpm
 
         11111111111111111111111
         11000000000010011100001                              1111111111111111

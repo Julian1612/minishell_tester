@@ -1,11 +1,11 @@
 
-WE ./img/west.xpm
-EA ./img/east.xpm
+WE ./textures/west.xpm
+EA ./textures/east.xpm
 
 
 
-SO                           ./img/south.xpm
-NO ./img/north.xpm
+SO                           ./textures/south.xpm
+NO ./textures/north.xpm
 
 C 225,30,0
 F 220,100,0
