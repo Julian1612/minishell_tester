@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 20:11:17 by jschneid          #+#    #+#              #
-#    Updated: 2023/02/17 09:54:50 by jschneid         ###   ########.fr        #
+#    Updated: 2023/02/17 10:55:01 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,12 @@ import shutil
 def create_output_file(file_nbr):
 	executable = "../cub3D"
 	input_file = f"./cases/case{file_nbr}.cub"
-	if file_nbr == 31:
-		args = [executable, input_file, input_file]
-	elif file_nbr == 33:
+	if file_nbr == 33:
 		args = [executable, "./cases/case33"]
+	elif file_nbr == 34:
+		args = [executable, "./cases/case34", "./cases/case34"]
+	elif file_nbr == 35:
+		args = [executable]
 	else:
 		args = [executable, input_file]
 	process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)

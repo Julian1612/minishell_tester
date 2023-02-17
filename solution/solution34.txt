@@ -1,0 +1,3 @@
+Error!
+Wrong amount of argument
+

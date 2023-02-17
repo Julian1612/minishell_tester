@@ -1,0 +1,3 @@
+Error!
+There are colors values for the RGBs missing
+
