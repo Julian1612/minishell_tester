@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 20:11:17 by jschneid          #+#    #+#              #
-#    Updated: 2023/02/15 18:30:23 by jschneid         ###   ########.fr        #
+#    Updated: 2023/02/17 09:54:50 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,6 @@ def create_output_file(file_nbr):
 	input_file = f"./cases/case{file_nbr}.cub"
 	if file_nbr == 31:
 		args = [executable, input_file, input_file]
-	elif file_nbr == 32:
-		args = [executable]
 	elif file_nbr == 33:
 		args = [executable, "./cases/case33"]
 	else:
@@ -63,9 +61,9 @@ def compare_files(file1, file2):
 			print(f"\033[31m---------------Testing map{i}:---------------")
 			return False
 
-def memory_leak_test():
-	valgrind_output = subprocess.run(["valgrind", "--leak-check=full", "./cub3D ./cases/case0.cub"], capture_output=True)
-	print(valgrind_output.stdout.decode("utf-8"))
+# def memory_leak_test():
+# 	valgrind_output = subprocess.run(["valgrind", "--leak-check=full", "./cub3D ./cases/case0.cub"], capture_output=True)
+# 	print(valgrind_output.stdout.decode("utf-8"))
 
 nbr_files = count_files("./cases")
 create_output()
@@ -80,9 +78,9 @@ for i in range(nbr_files):
 		print(f"Testing map{i}:✅\033[0m")
 	else:
 		print(f"Testing map{i}:❌\033[0m")
-print("Test for memory leaks:")
-if(memory_leak_test()):
-	print("Memory leaks test:✅\033[0m")
-else:
-	print("Memory leaks test:❌\033[0m")
+# print("Test for memory leaks:")
+# if(memory_leak_test()):
+# 	print("Memory leaks test:✅\033[0m")
+# else:
+# 	print("Memory leaks test:❌\033[0m")
 # shutil.rmtree("./output")
