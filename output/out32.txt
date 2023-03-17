@@ -1,3 +1,6 @@
+========================================
 Error!
-There are colors values for the RGBs missing
+RGB codes missing
+or on the wrong position
+========================================
 

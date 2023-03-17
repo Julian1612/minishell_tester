@@ -1,3 +1,6 @@
+========================================
 Error!
-RGB values for ceiling are missing
+RGB codes missing
+or on the wrong position
+========================================
 

@@ -1,3 +1,6 @@
+========================================
 Error!
-Filepath to .xpm file is missing
+File path for wall texture is missing
+or on the wrong position
+========================================
 

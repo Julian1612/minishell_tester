@@ -1,3 +1,6 @@
+========================================
 Error!
-Map is in incorrect position. Please place the map under the texture declarations
+File path for wall texture is missing
+or on the wrong position
+========================================
 
