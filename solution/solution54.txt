@@ -1,6 +1,5 @@
 ========================================
 Error!
-File path for wall texture is missing
-or on the wrong position
+File has not datatype png
 ========================================
 

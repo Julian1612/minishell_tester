@@ -1,7 +1,7 @@
-NO ./textures/north.xpm
-EA ./textures/east.xpm
-SO ./textures/south.xpm
-WE ./textures/west.xpm
+NO ./textures/north.png
+EA ./textures/east.png
+SO ./textures/south.png
+WE ./textures/west.png
 
 F 00,100,02
 C 05,30,03

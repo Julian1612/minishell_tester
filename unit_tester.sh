@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    unit_tester.sh                                     :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jschneid <jschneid@student.42.fr>          +#+  +:+       +#+         #
+#    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 15:58:02 by jschneid          #+#    #+#              #
-#    Updated: 2023/03/18 15:52:15 by jschneid         ###   ########.fr        #
+#    Updated: 2023/04/05 16:36:00 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ DIRECTORY="./cases"
 gsed -i '/\/\/#define RUN_TEST/s/\/\/#define.*/#define RUN_TEST/' ../includes/cub3D.h
 echo "\033[1mCompiling code..."
 cd ..
-make re > /dev/null || exit 1
+# make re > /dev/null || exit 1
 cd - > /dev/null
 echo "Running unit tests...\033[0m\n"
 python3 $script_path
