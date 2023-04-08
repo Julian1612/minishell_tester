@@ -1,0 +1,19 @@
+==13390== Memcheck, a memory error detector
+==13390== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==13390== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==13390== Command: ./../cub3D ./cases/case29.cub
+==13390== 
+========================================
+Error!
+RGB codes missing
+or on the wrong position
+========================================
+==13390== 
+==13390== HEAP SUMMARY:
+==13390==     in use at exit: 0 bytes in 0 blocks
+==13390==   total heap usage: 1,566 allocs, 1,566 frees, 33,040 bytes allocated
+==13390== 
+==13390== All heap blocks were freed -- no leaks are possible
+==13390== 
+==13390== For lists of detected and suppressed errors, rerun with: -s
+==13390== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

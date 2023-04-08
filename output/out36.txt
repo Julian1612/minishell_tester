@@ -1,6 +1,5 @@
 ========================================
 Error!
-RGB codes missing
-or on the wrong position
+RGB definition is invalid
 ========================================
 

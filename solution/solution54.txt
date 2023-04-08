@@ -1,5 +1,5 @@
 ========================================
 Error!
-File has not datatype png
+File has not data type png
 ========================================
 

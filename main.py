@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    main.py                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jschneid <jschneid@student.42.fr>          +#+  +:+       +#+         #
+#    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 20:11:17 by jschneid          #+#    #+#              #
-#    Updated: 2023/03/15 09:58:17 by jschneid         ###   ########.fr        #
+#    Updated: 2023/04/07 12:49:56 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
