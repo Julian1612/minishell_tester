@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 15:58:02 by jschneid          #+#    #+#              #
-#    Updated: 2023/04/08 15:40:35 by jschneid         ###   ########.fr        #
+#    Updated: 2023/04/08 17:14:28 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,8 +48,6 @@ do
     output_file="$OUTPUT_DIR/valgrind_output_$COUNTER.txt"
     valgrind --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all $PROGRAM $DIRECTORY/case$COUNTER.cub > "$output_file" 2>&1
     valgrind_exit=$?
-    echo $file
-	echo $output_file
 
     # Check output file for invalid reads
     echo "Checking output file case$COUNTER.cub for invalid reads..."
@@ -99,4 +97,5 @@ then
   echo "\e[32mThere are no invalid frees.\e[0m"
 else
   echo
+fi
 

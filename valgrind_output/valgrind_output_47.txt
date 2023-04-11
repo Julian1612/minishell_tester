@@ -1,18 +1,1 @@
-==13462== Memcheck, a memory error detector
-==13462== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==13462== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==13462== Command: ./../cub3D ./cases/case47.cub
-==13462== 
-========================================
-Error!
-Invalid character in map
-========================================
-==13462== 
-==13462== HEAP SUMMARY:
-==13462==     in use at exit: 0 bytes in 0 blocks
-==13462==   total heap usage: 2,358 allocs, 2,358 frees, 91,748 bytes allocated
-==13462== 
-==13462== All heap blocks were freed -- no leaks are possible
-==13462== 
-==13462== For lists of detected and suppressed errors, rerun with: -s
-==13462== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+./unit_tester.sh: line 49: valgrind: command not found
